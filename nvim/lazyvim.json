@@ -10,7 +10,10 @@
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.python",
+<<<<<<< HEAD
     "lazyvim.plugins.extras.lang.ruby",
+=======
+>>>>>>> 2cf82bdedbc0b49128afe48188a261d6b701a40e
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.lsp.neoconf",
     "lazyvim.plugins.extras.util.gitui"

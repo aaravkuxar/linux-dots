@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
   desc = "Disable New Line Comment",
 })
+<<<<<<< HEAD
 vim.cmd("colorscheme default")
 vim.opt.termguicolors = false
 -- Line numbers
@@ -21,3 +22,5 @@ vim.opt.wrap = true
 vim.cmd("syntax on")
 vim.cmd("colorscheme vim")
 vim.opt.cursorline = false
+=======
+>>>>>>> 2cf82bdedbc0b49128afe48188a261d6b701a40e

@@ -39,11 +39,11 @@ vim.cmd.colorscheme("vim")
 -- Highlight overrides
 local function apply_highlights()
 -- Reset UI backgrounds so terminal theme controls colors
-vim.api.nvim_set_hl(0, "Normal", {})
-vim.api.nvim_set_hl(0, "NormalNC", {})
-vim.api.nvim_set_hl(0, "NormalFloat", {})
-vim.api.nvim_set_hl(0, "SignColumn", {})
-vim.api.nvim_set_hl(0, "EndOfBuffer", {})
+-- vim.api.nvim_set_hl(0, "Normal", {})
+-- vim.api.nvim_set_hl(0, "NormalNC", {})
+-- vim.api.nvim_set_hl(0, "NormalFloat", {})
+-- vim.api.nvim_set_hl(0, "SignColumn", {})
+-- vim.api.nvim_set_hl(0, "EndOfBuffer", {})
 
 -- Completion popup (prevents purple background)
 vim.api.nvim_set_hl(0, "Pmenu", { ctermbg = "NONE" })

@@ -3,6 +3,9 @@
 -- Add any additional options here
 -- Disable autoformat
 vim.g.autoformat = false
+-- Disable netrw (must be BEFORE plugins load)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Disable automatic comment continuation
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -65,3 +68,4 @@ apply_highlights()
 vim.api.nvim_create_autocmd("ColorScheme", {
 callback = apply_highlights,
 })
+

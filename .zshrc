@@ -136,6 +136,7 @@ eval "$(zoxide init zsh)"
 
 alias winstart="podman-compose --file ~/.config/winapps/compose.yaml start"
 alias winstop="podman-compose --file ~/.config/winapps/compose.yaml stop"
+alias dsa-logic="cd ~/Documents/DSA-Logic/"
 
 export PATH=$PATH:/home/aaravk/.spicetify
 
@@ -144,3 +145,30 @@ if [ -f '/home/aaravk/google-cloud-sdk/path.zsh.inc' ]; then . '/home/aaravk/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/aaravk/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/aaravk/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Function to compile and run cpp code
+gcpp () {
+    if [[ "$1" != *.cpp ]]; then
+        echo "Usage: gcpp <file.cpp>"
+        return 1
+    fi
+
+    output="${1%.cpp}"
+
+    g++ -std=c++17 -Wall -Wextra "$1" -o "$output" || return 1
+    echo "Running ./$output"
+    ./"$output"
+}
+export PATH="$HOME/.cargo/bin:$PATH"
+
+scaleon() {
+  gsettings set org.gnome.mutter.wayland xwayland-scaling-factor 0
+}
+scaleoff() {
+  gsettings set org.gnome.mutter.wayland xwayland-scaling-factor 1
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias gte="gnome-text-editor"
+alias fastfetch="fastfetch -l 'GNOME OS'"

@@ -7,12 +7,14 @@ vim.g.autoformat = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.opt.list = false
+
 -- Disable automatic comment continuation
 vim.api.nvim_create_autocmd("BufEnter", {
-desc = "Disable New Line Comment",
-callback = function()
-vim.opt.formatoptions:remove({ "c", "r", "o" })
-end,
+  desc = "Disable New Line Comment",
+  callback = function()
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
+  end,
 })
 
 -- Use terminal color palette (not truecolor)
@@ -41,24 +43,24 @@ vim.cmd.colorscheme("vim")
 
 -- Highlight overrides
 local function apply_highlights()
--- Reset UI backgrounds so terminal theme controls colors
--- vim.api.nvim_set_hl(0, "Normal", {})
--- vim.api.nvim_set_hl(0, "NormalNC", {})
--- vim.api.nvim_set_hl(0, "NormalFloat", {})
--- vim.api.nvim_set_hl(0, "SignColumn", {})
--- vim.api.nvim_set_hl(0, "EndOfBuffer", {})
+  -- Reset UI backgrounds so terminal theme controls colors
+  -- vim.api.nvim_set_hl(0, "Normal", {})
+  -- vim.api.nvim_set_hl(0, "NormalNC", {})
+  -- vim.api.nvim_set_hl(0, "NormalFloat", {})
+  -- vim.api.nvim_set_hl(0, "SignColumn", {})
+  -- vim.api.nvim_set_hl(0, "EndOfBuffer", {})
 
--- Completion popup (prevents purple background)
-vim.api.nvim_set_hl(0, "Pmenu", { ctermbg = "NONE" })
-vim.api.nvim_set_hl(0, "PmenuSel", { reverse = true })
-vim.api.nvim_set_hl(0, "PmenuSbar", { ctermbg = "NONE" })
-vim.api.nvim_set_hl(0, "PmenuThumb", { ctermbg = "NONE" })
+  -- Completion popup (prevents purple background)
+  vim.api.nvim_set_hl(0, "Pmenu", { ctermbg = "NONE" })
+  vim.api.nvim_set_hl(0, "PmenuSel", { reverse = true })
+  vim.api.nvim_set_hl(0, "PmenuSbar", { ctermbg = "NONE" })
+  vim.api.nvim_set_hl(0, "PmenuThumb", { ctermbg = "NONE" })
 
--- Classic Vim diff colors
-vim.api.nvim_set_hl(0, "DiffAdd", { ctermbg = "DarkGreen" })
-vim.api.nvim_set_hl(0, "DiffDelete", { ctermbg = "DarkRed" })
-vim.api.nvim_set_hl(0, "DiffChange", { ctermbg = "DarkBlue" })
-vim.api.nvim_set_hl(0, "DiffText", { ctermbg = "Blue" })
+  -- Classic Vim diff colors
+  vim.api.nvim_set_hl(0, "DiffAdd", { ctermbg = "DarkGreen" })
+  vim.api.nvim_set_hl(0, "DiffDelete", { ctermbg = "DarkRed" })
+  vim.api.nvim_set_hl(0, "DiffChange", { ctermbg = "DarkBlue" })
+  vim.api.nvim_set_hl(0, "DiffText", { ctermbg = "Blue" })
 end
 
 -- Apply highlights immediately
@@ -66,6 +68,5 @@ apply_highlights()
 
 -- Reapply highlights if colorscheme changes
 vim.api.nvim_create_autocmd("ColorScheme", {
-callback = apply_highlights,
+  callback = apply_highlights,
 })
-

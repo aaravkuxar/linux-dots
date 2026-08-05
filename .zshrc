@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-alias yay="flatpak update && yay"
+alias paru="flatpak update && paru"
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
@@ -171,4 +171,4 @@ scaleoff() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias gte="gnome-text-editor"
-alias fastfetch="fastfetch -l 'GNOME OS'"
+alias ff="fastfetch"

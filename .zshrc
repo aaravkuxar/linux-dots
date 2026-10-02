@@ -109,6 +109,8 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
+setopt correct
+
 # Function to copy a .desktop file
 copydesktop() {
     local src="/usr/share/applications/$1.desktop"
@@ -172,3 +174,5 @@ scaleoff() {
 
 alias gte="gnome-text-editor"
 alias ff="fastfetch"
+
+eval $(thefuck --alias)

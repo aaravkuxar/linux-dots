@@ -1,6 +1,6 @@
 return {
   {
-    "nvim.mini/mini.map",
+    "nvim-mini/mini.map",
     version = false,
     config = function()
       local map = require("mini.map")
@@ -9,7 +9,7 @@ return {
 
       -- Open minimap automatically
       vim.schedule(function()
-        MiniMap.open()
+        map.open()
       end)
     end,
   },
